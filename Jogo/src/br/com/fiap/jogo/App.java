@@ -16,20 +16,33 @@ public class App {
 		System.out.println("Digite o nome do seu jogador: ");
 		String nomeJogador = ler.next();
 		
-		var jogador = new Jogador(nomeJogador);
+		System.out.println("Escolha a classe do seu jogador: [MAGO | GUERREIRO]");
+		String classe = ler.next();
+		
+		var jogador = classe.equals("MAGO") ? new Mago() : new Guerreiro();
 		jogador.ganharExperiencia(10);
 		jogador.setXp(20);
 		
-		var inimigo1 = new Jogador("Ryu");
+		var inimigo1 = new Mago("Ryu");
 		inimigo1.ganharExperiencia(10);
 		inimigo1.setXp(20);
 		
-		var inimigo2 = new Jogador("Aleck");
+		var inimigo2 = new Guerreiro("Aleck");
 		inimigo2.ganharExperiencia(10);
 		inimigo2.setXp(20);
 		
 		inimigos.add(inimigo1);
 		inimigos.add(inimigo2);
+		
+		var bolaDeFogo = new BolaDeFogo();
+		var dragao = new Dragao();
+		var fase = new Fase();
+		
+		fase.carregar(jogador);
+		fase.carregar(inimigo1);
+		fase.carregar(inimigo2);
+		fase.carregar(bolaDeFogo);
+		fase.carregar(dragao);
 			
 		System.out.println("Selecione o inimigo que deseja atacar! \n" + inimigo1.getNome() + "\n" + inimigo2.getNome());
 		String nomeInimigo = ler.next();

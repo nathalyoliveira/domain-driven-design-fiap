@@ -1,8 +1,8 @@
 package br.com.fiap.jogo;
 
-public class Jogador {
+public abstract class Jogador extends ElementoVisual{
 
-	private String nome;
+	private String nome = "Anonimo";
 	private int xpIni;
 	private int xp;
 	private int hp;
@@ -15,6 +15,7 @@ public class Jogador {
 	
 	public Jogador(String nome) {
 		this.nome = nome;
+		System.out.println("Criando jogador chamado " + nome);
 	}
 	
 	public int getXpIni() {
@@ -58,20 +59,21 @@ public class Jogador {
 	}
 	
 	public void receberDano(int pontos) {
-		this.xp = getXp() - pontos;
-		if(getXp()<=0) {
+		this.hp -= pontos;
+		if(this.hp<=0) {
 			System.out.println("Game Over " + nome);
+			this.hp = 0;
 			derrotado = true;
 		}
 			
 	}
 	
 	public void receberCura(int pontos) {
-		this.xp = getXp() + pontos;
+		this.hp += pontos;
 	}
 	
 	public void ganharExperiencia(int pontos) {
-		this.hp = getHp() + pontos;
+		this.xp += pontos;
 	}
 	
 	public void receberAntidoto() {
@@ -92,4 +94,6 @@ public class Jogador {
 	public boolean souJogador(String nome) {
 		return nome.toLowerCase().equals(this.nome.toLowerCase());
 	}
+	
+	public abstract void mover();
 }
