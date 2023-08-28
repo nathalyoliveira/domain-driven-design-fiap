@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.SecondaryController">
+     <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="486.0" prefWidth="297.0" style="-fx-background-color: #DEF9F5;">
+         <children>
+            <Pane layoutX="23.0" layoutY="100.0" prefHeight="341.0" prefWidth="250.0" style="-fx-border-style: solid;">
+               <children>
+                  <Button layoutX="20.0" layoutY="303.0" mnemonicParsing="false" onAction="#alteraChamado" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #008000;" text="Alterar" textFill="WHITE" />
+                  <Label layoutX="24.0" layoutY="23.0" text="Alterar Chamado" />
+                  <TextField fx:id="txtUsuario" layoutX="24.0" layoutY="86.0" prefHeight="25.0" prefWidth="184.0" />
+                  <Label layoutX="24.0" layoutY="58.0" text="Usuario" />
+                  <Label layoutX="24.0" layoutY="111.0" text="Codigo do Equipamento" />
+                  <TextField fx:id="txtCodEquipamento" layoutX="24.0" layoutY="128.0" prefHeight="25.0" prefWidth="184.0" />
+                  <Label layoutX="24.0" layoutY="176.0" text="Categoria" />
+                  <Label layoutX="140.0" layoutY="176.0" text="Atividades" />
+                  <RadioButton fx:id="optComputador" layoutX="20.0" layoutY="205.0" mnemonicParsing="false" text="Computador">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="optImpressora" layoutX="20.0" layoutY="231.0" mnemonicParsing="false" text="Impressora">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="optRede" layoutX="20.0" layoutY="255.0" mnemonicParsing="false" text="Rede">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </RadioButton>
+                  <CheckBox fx:id="cbContato" layoutX="131.0" layoutY="205.0" mnemonicParsing="false" text="Primeiro Contato">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="cbAtendido" layoutX="131.0" layoutY="231.0" mnemonicParsing="false" text="Atendido">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="cbEncerrado" layoutX="131.0" layoutY="255.0" mnemonicParsing="false" text="Encerrado">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
