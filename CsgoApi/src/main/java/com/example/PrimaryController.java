@@ -33,10 +33,6 @@ public class PrimaryController implements Initializable {
     public FlowPane carregar() {
 
         try {
-            // var url = new URL("https://rickandmortyapi.com/api/character?page=" +
-            // pagina);
-            // var url = new
-            // URL("https://dattebayo-api.onrender.com/characters?&limit=9&page=" + pagina);
             var url = new URL("https://cs2-api.vercel.app/api/search?&q=paris&page=" + pagina);
             var con = url.openConnection();
             con.connect();
@@ -76,8 +72,6 @@ public class PrimaryController implements Initializable {
     private List<Collectible> jsonParaLista(String json) throws JsonMappingException, JsonProcessingException {
         var mapper = new ObjectMapper();
         var data = mapper.readTree(json).get("data");
-        // System.out.println("-----------------------" + characters +
-        // "-------------------");
         List<Collectible> lista = new ArrayList<>();
 
         data.forEach(d -> {
